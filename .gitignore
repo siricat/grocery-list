@@ -6,12 +6,33 @@
 
 # Ignore bundler config
 /.bundle
+/vendor/bundle
 /.powrc
 
 # Ignore the default SQLite database.
 /db/*.sqlite3
 /config/database.yml
 
+# Ignore tests/specs
+/spec/tmp/*
+capybara-*.html
+.rspec
+/coverage/
+pickle-email-*.html
+
 # Ignore all logfiles and tempfiles.
-/log/*.log
+/log/*
 /tmp
+
+# Ignore sass cache
+*.sassc
+.sass-cache
+
+# Ignore compiled assets
+/public/system/*
+
+# Ignore other
+*.rbc
+**.orig
+rerun.txt
+

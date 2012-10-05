@@ -1,4 +1,16 @@
 GroceryList::Application.routes.draw do
+
+  root to: 'welcome#index'
+    
+  devise_for :users, path: '/', path_names: {
+    sign_in: 'login', 
+    sign_out: 'logout', 
+    sign_up: 'register'
+  }
+
+  match 'dashboard' => 'dashboard#index'
+  
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

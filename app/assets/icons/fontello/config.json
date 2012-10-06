@@ -1,0 +1,53 @@
+{
+  "name": "fontello",
+  "glyphs": [
+    {
+      "uid": "889a8bd0b481e3523ede8a7d75164cd1",
+      "orig_css": "comment",
+      "orig_code": 59160,
+      "css": "comment",
+      "code": 59160,
+      "src": "websymbols"
+    },
+    {
+      "uid": "7b16b22168e762c88333f465da862098",
+      "orig_css": "ok",
+      "orig_code": 59392,
+      "css": "ok-1",
+      "code": 59392,
+      "src": "websymbols"
+    },
+    {
+      "uid": "15739f3032c2aa3df67efc96b3ffef56",
+      "orig_css": "cancel-circle",
+      "orig_code": 10006,
+      "css": "cancel-circle",
+      "code": 10006,
+      "src": "websymbols"
+    },
+    {
+      "uid": "242giivkgr3e6le7b2xqi2pkdruf85mu",
+      "orig_css": "edit",
+      "orig_code": 9997,
+      "css": "edit",
+      "code": 9997,
+      "src": "modernpics"
+    },
+    {
+      "uid": "587bjlxppui6u4japooa2foe58rsvicp",
+      "orig_css": "pencil",
+      "orig_code": 9998,
+      "css": "pencil",
+      "code": 9998,
+      "src": "modernpics"
+    },
+    {
+      "uid": "9affc98d652b86628d650ee58dbf0357",
+      "orig_css": "basket",
+      "orig_code": 59197,
+      "css": "basket",
+      "code": 59197,
+      "src": "fontawesome"
+    }
+  ]
+}

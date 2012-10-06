@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
   
+  after_create :add_list
+  
   # Include default devise modules. Others available are:
   # :lockable, :timeoutable and :omniauthable
   
@@ -16,6 +18,14 @@ class User < ActiveRecord::Base
     :password, 
     :password_confirmation, 
     :remember_me
+    
+  has_one   :list
+  has_many  :products
+  
+  def add_list
+    self.build_list
+  end
+  
     
   
 end

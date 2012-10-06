@@ -10,9 +10,10 @@ GroceryList::Application.routes.draw do
   match 'dashboard' => 'dashboard#index'
 
   root :to => 'welcome#index'
-
-
-
+  
+  resources :list do
+    resources :list_items
+  end
 
 
 

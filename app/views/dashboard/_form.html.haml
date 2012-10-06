@@ -1,10 +1,14 @@
 = simple_form_for [@list, @li] do |f|
-  %fieldset
-    = f.input :quantity, :label => 'quantity'
-  %fieldset
+  %fieldset.name
     = f.input :name, :label => 'name'
-  %fieldset 
+  %fieldset.quantity
+    = f.input :quantity, :label => 'quantity'
+  %fieldset.add_note
+    = link_to void_path, :class => 'btn' do
+      %i.icon_note
+  %fieldset.buttons
+    = link_to 'add to list', void_path, :class => 'submit btn'
+  %fieldset.note
     = f.input :note, :label => 'note (optional)'
   %footer
-    = f.button :submit 
-    = link_to "Cancel", :back 
+    = link_to 'clear form', void_path, :class => 'cancel'

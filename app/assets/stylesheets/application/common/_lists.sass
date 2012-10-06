@@ -1,0 +1,60 @@
+// list ----------------------------------------------------------------------
+
+section.list
+
+
+
+
+
+
+
+// form (new list item) ------------------------------------------------------
+
+form.new_list_item
+  margin-bottom: 60px
+  
+  > fieldset
+    +float-left
+    margin-right: 10px    
+
+  label
+    display: block
+    clear: both
+    color: rgba($txt_black, 0.6)
+    font-size: 0.8em
+    text-shadow: 1px 1px 1px rgba($txt_white, 0.4)
+
+  input
+    font-size: 24px
+    padding: 8px 10px
+    
+  .btn
+    padding: 0.75em 1.5em
+
+  .name input
+    width: 510px
+
+  .quantity input
+    width: 180px
+    +border-top-right-radius(8px)
+
+  .add_note
+    +float-left
+    margin-top: 29px
+
+  .buttons
+    +float-right
+    margin: 29px 0 0 0
+    .submit
+      margin-right: 6px
+
+  .note
+    display: none
+    textarea
+      width: 702px
+      height: 110px
+  
+  > footer
+    clear: both
+    padding-top: 5px
+    font-size: 0.8em

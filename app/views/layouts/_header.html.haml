@@ -1,6 +1,11 @@
 %header.site
+  
   %h1.logo
-    = link_to 'groc', root_path
+    = link_to root_path do    
+      %i.icon_cart
+      %i.icon_cart
+      %i.icon_cart
+
   - if user_signed_in?
     %ul
       %li= "Hello #{current_user.email} "

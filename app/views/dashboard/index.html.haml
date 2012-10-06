@@ -1,1 +1,35 @@
 %h1.page Dashboard
+
+/ = link_to "Add an Item", new_product_path
+
+%p Add an Item
+= render :partial => "form"
+
+
+%br
+%br
+%br
+
+%section.list
+  %header
+    %h1.section
+      %span.text
+        List
+      %span.meta
+        = @list.list_items.count
+  .content
+    - @list.list_items.each do |li|
+      .list_item
+        .quantity
+          quantity: 
+          = li.quantity
+        .name
+          name:
+          = li.product.name
+        .note
+          note:
+          = li.note
+        .user
+          requested by:
+          = li.user.email
+  

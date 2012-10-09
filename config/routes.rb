@@ -6,14 +6,15 @@ GroceryList::Application.routes.draw do
     :sign_up => 'register'
   }
 
-  match 'user_root' => 'dashboard#index'
-  match 'dashboard' => 'dashboard#index'
+  authenticated :user do
+    root :to => 'dashboard#index'
+  end
 
-  root :to => 'welcome#index'
-  
   resources :list do
     resources :list_items
   end
+
+  root :to => 'welcome#index'
 
 
 

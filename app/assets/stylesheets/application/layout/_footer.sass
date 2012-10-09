@@ -1,0 +1,26 @@
++sticky-footer(40px, "#container", "#push", "footer.site")
+
+footer.site
+  +clear
+  +box_sizing("border-box")
+  width: 80%
+  margin-left: auto
+  margin-right: auto
+  padding: 0 15px
+  background: rgba(0,0,0,0.2)
+  +border_top_radius(8px)  
+  
+  ul
+    +horizontal_list
+    li
+      margin-right: 12px
+      line-height: 40px
+      &:last-child
+        margin-right: 0px
+    a
+      color: $txt_black
+      text-decoration: none
+    &.copyright
+      +float_left
+    &.static
+      +float_right

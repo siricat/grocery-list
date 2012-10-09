@@ -1,0 +1,7 @@
+
+.icon-edit:before { content: '\270d'; } /* '✍' */
+.icon-pencil:before { content: '\270e'; } /* '✎' */
+.icon-ok-1:before { content: '\e800'; } /* '' */
+.icon-cancel-circle:before { content: '\2716'; } /* '✖' */
+.icon-comment:before { content: '\e718'; } /* '' */
+.icon-basket:before { content: '\e73d'; } /* '' */

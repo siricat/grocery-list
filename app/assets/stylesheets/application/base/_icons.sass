@@ -1,0 +1,61 @@
+// for font-face declaration
+$fontello_font_path: "fontello/font/fontello"
+
+// set up font-face
++font-face("fontello", font-files("#{$fontello_font_path}.woff", woff, "#{$fontello_font_path}.ttf", truetype, "#{$fontello_font_path}.svg#fontello", svg), "#{$fontello_font_path}.eot", normal, normal)
+
+
+// styling for icons ---------------------------------------------------------
+
+[class^="icon_"]:before,
+[class*=" icon_"]:before
+  display: inline-block
+  font-family: "fontello"
+  font-style: normal
+  font-weight: normal
+  speak: none
+  text-decoration: inherit
+  width: 1.1em
+  margin-right: 0.1em
+  text-align: center
+  line-height: 1em
+  // uncomment for 3d effect
+  // text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3)
+
+
+// icon declarations ---------------------------------------------------------
+
+// if you want to update fontello
+// - go to the site (fontello.com)
+// - upload our config.json to see the current icon set
+// - select/deselect any icons you want to edit
+// - re-export files from fontello
+// - add those files to /app/icons/fontello/
+// - convert the styles in fontello/css/fontello.css to sass
+// - - (http://css2sass.heroku.com/)
+// - and add them to /app/assets/stylesheets/application/base/icons.sass
+// - - (overwriting the existing declarations)
+
+.icon_cancel:before
+  content: '\2716'
+// '✖'
+
+.icon_cart:before
+  content: '\e73d'
+// ''
+
+.icon_check:before
+  content: '\e800'
+// ''
+
+.icon_comment:before
+  content: '\e718'
+// ''
+
+.icon_edit:before
+  content: '\270e'
+// '✎'
+
+.icon_note:before
+  content: '\270d'
+// '✍'

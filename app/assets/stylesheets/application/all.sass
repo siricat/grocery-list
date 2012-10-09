@@ -1,21 +1,25 @@
-// vendor ----------------------------------------------------------------------
+// vendor --------------------------------------------------------------------
 
 // compass
 @import "compass/reset"
 @import "compass/css3/box-shadow"
 @import "compass/css3/border-radius"
+@import "compass/css3/font-face"
 @import "compass/css3/opacity"
+@import "compass/css3/text-shadow"
 @import "compass/utilities"
+@import "sassy-buttons"
 
 
-// application -----------------------------------------------------------------
-
+// application ---------------------------------------------------------------
 
 // base
 // for mixins, variables and helpers to aid in building
 // the application. no styling of actual elements should
 // go in base.
 
+@import base/colors
+@import base/icons
 @import base/mixins
 
 
@@ -41,7 +45,10 @@
 // on multiple pages. elements used on a single page
 // should be included in views.
 
-// not yet in use
+@import common/buttons
+@import common/forms
+@import common/links
+@import common/lists
 
 
 // views
@@ -54,5 +61,4 @@
 // explain their singular usage.
 
 // not yet in use
-
 

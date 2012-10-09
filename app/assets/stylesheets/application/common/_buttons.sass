@@ -1,0 +1,50 @@
+// sassy buttons -------------------------------------------------------------
+
+//  usage
+//  +sassy-button(gradient-style, border-radius, font-size, first-color, second-color, text-color, text-style, auto-states, ie-support)
+//  +sassy-button-structure(-border-radius, font-size, padding)
+//  +sassy-button-gradient(gradient-style, first-color, second-color, text-color, text-style, auto-states, ie-support)
+
+
+// defaults ------------------------------------------------------------------
+
+$sb-base-color: rgba(11, 153, 194, 1)
+$sb-second-color: false
+$sb-border-radius: 5px
+$sb-padding: 0.3em 1.5em
+$sb-font-size: 12px
+$sb-text-color: white
+$sb-text-style: "inset"
+$sb-gradient-style: "simple"
+$sb-pseudo-states: true
+$sb-ie-support: true
+
+
+// mixin ---------------------------------------------------------------------
+
+// gets included when calling the sassy-button-structure 
+// if you need any styles applied to all your sassy buttons, 
+// add it here.
+
+= sassy-button-default-structure
+  display: inline-block
+  cursor: pointer
+  line-height: 1.5em
+  text-decoration: none
+
+// for use in views ----------------------------------------------------------
+
+.btn
+  +sassy-button
+
+.btn.green
+  +sassy-button-gradient("simple", #7fb74d)
+
+.btn.red
+  +sassy-button-gradient("simple", #cc3512)
+
+
+// context specific ----------
+
+.btn.submit
+  @extend .btn.green

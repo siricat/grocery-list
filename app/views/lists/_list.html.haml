@@ -1,0 +1,23 @@
+%section.list
+  %header
+    %h1.section
+      %span.text
+        Grocery List
+      %span.meta
+        = "(#{@list.list_items.count})"
+  .content
+    - @list.list_items.each do |li|
+      .list_item
+        .quantity
+          quantity: 
+          = li.quantity
+        .name
+          name:
+          = li.product.name
+        .note
+          note:
+          = li.note
+        .user
+          requested by:
+          = li.user.email
+  

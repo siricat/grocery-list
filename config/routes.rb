@@ -15,6 +15,11 @@ GroceryList::Application.routes.draw do
   end
 
   root :to => 'welcome#index'
+  
+  match '/about' => 'static#about', :as => :about
+  match '/contact' => 'static#contact', :as => :contact
+  match '/help' => 'static#help', :as => :help
+  match '/terms' => 'static#terms', :as => :terms
 
 
 

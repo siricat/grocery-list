@@ -1,18 +1,20 @@
 header.site
   +clear
+  +box_sizing("border-box")  
   width: 100%
   margin-bottom: 20px
-  padding: 7px 10px 8px
+  padding: 7px 15px 8px
   background: rgba(0,0,0,0.2)
-  +border-bottom-radius(8px)
+  +border_bottom_radius(8px)
 
   .logo
     +float_left
     font-size: 24px
-    a
-      color: $txt_black
 
   ul
     +float_right
     +horizontal_list
+    
+  a
+    color: $txt_black    
       

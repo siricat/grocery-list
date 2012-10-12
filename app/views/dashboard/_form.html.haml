@@ -4,7 +4,7 @@
   %fieldset.quantity
     = f.input :quantity, :label => 'quantity'
   %fieldset.category
-    = f.select(:category_id, @categories.collect {|c| [ c.name, c.id ] }, { :prompt => "Select a Category" })
+    = f.select(:category_id, @categories.collect { |c| [ c.name, c.id ] }, { :prompt => "Select a Category" })
   %fieldset.add_note
     = link_to void_path, :class => 'btn' do
       %i.icon_note

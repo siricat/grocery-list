@@ -21,6 +21,7 @@ class ListItemsController < ApplicationController
   
   def edit  
     @li.name = @li.product.name
+    @categories = Category.all
   end
 
   def update

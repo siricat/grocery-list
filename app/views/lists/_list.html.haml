@@ -6,21 +6,29 @@
       %span.meta
         = "(#{@list.list_items.count})"
   .content
-    - @list.list_items.each do |li|
-      .list_item
-        .name
-          name:
-          = li.product.name
-        .quantity
-          quantity: 
-          = li.quantity
-        .note
-          note:
-          = li.note
-        .user
-          requested by:
-          = li.user.username
-        .actions
-          = link_to "edit", edit_list_list_item_path(@list, li)
-          = link_to "delete", list_list_item_path(@list, li), :method => :delete, :confirm => "Are you sure you want to delete #{li.product.name} from your list?"
+    - @categories.each do |category|
+      - items = @list.list_items.by_category(category)
+      - unless items.empty?
+        .category{:class => "#{category.to_param}"}
+          %header
+            %h1.section
+              = category.title  
+          .list_items
+            - items.each do |li|
+              .list_item
+                .name
+                  name:
+                  = li.product.name
+                .quantity
+                  quantity: 
+                  = li.quantity
+                .note
+                  note:
+                  = li.note
+                .user
+                  requested by:
+                  = li.user.username
+                .actions
+                  = link_to "edit", edit_list_list_item_path(@list, li)
+                  = link_to "delete", list_list_item_path(@list, li), :method => :delete, :confirm => "Are you sure you want to delete #{li.product.name} from your list?"
           

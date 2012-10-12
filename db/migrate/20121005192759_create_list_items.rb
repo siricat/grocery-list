@@ -3,6 +3,7 @@ class CreateListItems < ActiveRecord::Migration
     create_table :list_items do |t|
       t.string      :quantity
       t.text        :note
+      t.references  :category
       t.references  :product
       t.references  :list
       t.references  :user

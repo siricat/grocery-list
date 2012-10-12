@@ -8,7 +8,7 @@
 
   - if user_signed_in?
     %ul
-      %li= "Hello #{current_user.username} "
+      %li= "Hello #{current_user.display_name} "
       %li= link_to 'logout', destroy_user_session_path, method: :delete
   - else
     %ul

@@ -1,6 +1,6 @@
 class ListItemsController < ApplicationController
 
-  before_filter :get_category, :only => [:create, :update]
+  before_filter :get_category, :only => [:create, :update, :position]
   before_filter :get_product, :only => [:create, :update]
   before_filter :get_list
   before_filter :get_list_item, :except => [:create]
@@ -44,6 +44,13 @@ class ListItemsController < ApplicationController
     else
       flash[:alert] = "#{@li.product.name} could not be deleted."
     end
+  end
+  
+  def position
+    @li.product.category = @li.category = @category
+    @li.update_attribute :position_position, params[:list_item][:position]
+    @li.product.save
+    render :nothing => true
   end
 
 private

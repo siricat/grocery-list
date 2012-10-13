@@ -7,7 +7,13 @@ class ListItem < ActiveRecord::Base
   belongs_to  :product
   belongs_to  :user
   
+  default_scope :order => 'position ASC'
+  
   scope :by_category, lambda { |category| {
     :conditions => { :category_id => category.id }
   }}
+  
+  include RankedModel
+  ranks :position, :with_same => :list_id
+  
 end

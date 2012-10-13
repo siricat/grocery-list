@@ -11,7 +11,9 @@ GroceryList::Application.routes.draw do
   end
 
   resources :list do
-    resources :list_items
+    resources :list_items do
+      put 'position', :on => :member
+    end
   end
 
   root :to => 'welcome#index'

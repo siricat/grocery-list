@@ -25,6 +25,7 @@ end
 
 gem 'jquery-rails', '~> 2.1.3'
 gem 'friendly_id', '~> 4.0.8'
+gem 'ranked-model'
 
 group :test, :development do
   gem 'rspec-rails', '~> 2.11.0'

@@ -6,17 +6,17 @@ ActiveAdmin.register Category do
     column "Created on", :created_at    
     default_actions                   
   end  
-  
-  form do |f|
-    f.inputs "Name" do
-      f.input :name
-    end
-    f.buttons
-  end
-  
+    
   filter :name
   
   config.sort_order = "name_asc"
   config.per_page = 50
+  
+  form do |f|
+    f.inputs "New Category" do
+      f.input :name
+    end
+    f.buttons
+  end
   
 end

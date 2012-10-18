@@ -16,4 +16,14 @@ ActiveAdmin.register User do
   config.sort_order = "display_name_asc"
   config.per_page = 50  
   
+  form do |f|
+    f.inputs "New User" do
+      f.input :display_name
+      f.input :email
+      f.input :encrypted_password
+      f.input :reset_password_token
+    end
+    f.buttons
+  end  
+  
 end

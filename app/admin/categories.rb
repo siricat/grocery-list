@@ -1,5 +1,12 @@
 ActiveAdmin.register Category do
   
+  index do                         
+    column :id                  
+    column :name        
+    column "Created on", :created_at    
+    default_actions                   
+  end  
+  
   form do |f|
     f.inputs "Name" do
       f.input :name

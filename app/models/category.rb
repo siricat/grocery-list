@@ -7,7 +7,7 @@ class Category < ActiveRecord::Base
     name.titleize
   end
   
-  def to_param
+  def to_parameter
     name.parameterize.underscore
   end
 end

@@ -7,7 +7,7 @@
         = "(#{@list.list_items.count})"
   .content
     - @categories.each do |category|      
-      .category[category]{:class => "#{category.to_param}"}
+      .category[category]{:class => "#{category.to_parameter}"}
         %header
           %h1.section
             %span.text

@@ -25,4 +25,6 @@ ActiveAdmin.register Category do
     redirect_to collection_path, :notice => "Selected categories deleted."
   end
   
+  config.comments = false  
+  
 end

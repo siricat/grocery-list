@@ -32,4 +32,6 @@ ActiveAdmin.register User do
     redirect_to collection_path, :notice => "Selected users deleted."
   end  
   
+  config.comments = false  
+  
 end

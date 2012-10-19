@@ -16,5 +16,8 @@ ActiveAdmin.register AdminUser do
       f.input :password_confirmation  
     end                               
     f.buttons                         
-  end                                 
+  end
+  
+  config.comments = false
+  
 end                                   

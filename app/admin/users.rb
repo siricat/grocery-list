@@ -14,5 +14,6 @@ ActiveAdmin.register User do
   filter :email
 
   config.sort_order = "display_name_asc"
+  config.per_page = 50
 
 end

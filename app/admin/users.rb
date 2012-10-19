@@ -21,8 +21,8 @@ ActiveAdmin.register User do
     f.inputs "New User" do
       f.input :display_name
       f.input :email
-      f.input :encrypted_password
-      f.input :reset_password_token
+      f.input :password
+      f.input :password_confirmation
     end
     f.buttons
   end

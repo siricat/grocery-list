@@ -9,4 +9,6 @@ ActiveAdmin.register Category do
 
   filter :name
 
+  config.sort_order = "name_asc"
+
 end

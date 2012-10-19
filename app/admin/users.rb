@@ -13,4 +13,6 @@ ActiveAdmin.register User do
   filter :display_name
   filter :email
 
+  config.sort_order = "display_name_asc"
+
 end

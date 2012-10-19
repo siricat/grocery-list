@@ -1,6 +1,7 @@
 ActiveAdmin.register User do
   
-  index do                         
+  index do   
+    selectable_column                           
     column :id                  
     column :display_name        
     column :email
@@ -24,6 +25,11 @@ ActiveAdmin.register User do
       f.input :reset_password_token
     end
     f.buttons
+  end  
+  
+  batch_action :destroy, :confirm => "Are you sure you want to delete all of these?" do |selection|
+    User.find(selection).each { |u| u.destroy }
+    redirect_to collection_path, :notice => "Selected users deleted."
   end  
   
 end

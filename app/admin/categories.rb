@@ -7,4 +7,6 @@ ActiveAdmin.register Category do
     f.buttons
   end
 
+  filter :name
+
 end

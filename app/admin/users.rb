@@ -10,4 +10,7 @@ ActiveAdmin.register User do
     default_actions
   end
 
+  filter :display_name
+  filter :email
+
 end

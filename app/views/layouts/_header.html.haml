@@ -1,14 +1,16 @@
 %header.site
-  
+
   %h1.logo
-    = link_to root_path do    
+    = link_to root_path do
       %i.icon_cart
       %i.icon_cart
       %i.icon_cart
 
   - if user_signed_in?
     %ul
-      %li= "Hello #{current_user.display_name} "
+      %li
+        Hello
+        = link_to current_user.display_name, settings_path
       %li= link_to 'logout', destroy_user_session_path, method: :delete
   - else
     %ul

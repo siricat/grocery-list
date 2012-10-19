@@ -21,11 +21,15 @@ GroceryList::Application.routes.draw do
   end
 
   root :to => 'welcome#index'
-  
+
+  match '/settings' => 'settings#index', :as => :settings
+  match '/settings/password' => 'settings#password', :as => :settings_password
+  match '/settings/update_password' => 'settings#update_password'
   match '/about' => 'static#about', :as => :about
   match '/contact' => 'static#contact', :as => :contact
   match '/help' => 'static#help', :as => :help
   match '/terms' => 'static#terms', :as => :terms
+
 
 
 

@@ -23,8 +23,8 @@ GroceryList::Application.routes.draw do
   root :to => 'welcome#index'
 
   match '/settings' => 'settings#index', :as => :settings
-  match '/settings/password' => 'settings#password', :as => :settings_password
-  match '/settings/update_password' => 'settings#update_password'
+  match '/settings/account' => 'settings#account', :as => :settings_account
+  match '/settings/update_account' => 'settings#update_account'
   match '/about' => 'static#about', :as => :about
   match '/contact' => 'static#contact', :as => :contact
   match '/help' => 'static#help', :as => :help

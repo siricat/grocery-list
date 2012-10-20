@@ -3,11 +3,11 @@ class SettingsController < ApplicationController
   def index
   end
 
-  def password
+  def account
     @user = current_user
   end
 
-  def update_password
+  def update_account
     @user = User.find(current_user.id)
     if @user.update_attributes(params[:user])
       sign_in @user, :bypass => true
@@ -15,7 +15,7 @@ class SettingsController < ApplicationController
       redirect_to settings_path
     else
       flash[:alert] = 'Unsuccessful. Please be sure your passwords match.'
-      render 'password'
+      render 'account'
     end
   end
 end

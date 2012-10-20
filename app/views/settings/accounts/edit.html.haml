@@ -1,0 +1,9 @@
+= simple_form_for(@user, :url => { :action => "update" } ) do |f|
+  %fieldset
+    = f.input :display_name, :label => "Display name"
+  %fieldset
+    = f.input :password_confirmation, :label  => "Password confirmation"
+  %fieldset
+    = f.input :password, :label => 'Password'
+  .action_container
+    = f.submit

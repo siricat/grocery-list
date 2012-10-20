@@ -20,14 +20,21 @@ GroceryList::Application.routes.draw do
     end
   end
 
+  namespace :settings do
+    root :to => 'base#index'
+    resource :account, :only => [:edit, :update]
+  end
+
   root :to => 'welcome#index'
-  
+
   match '/about' => 'static#about', :as => :about
   match '/contact' => 'static#contact', :as => :contact
   match '/help' => 'static#help', :as => :help
   match '/terms' => 'static#terms', :as => :terms
 
 
+
+  # docs -----------------------------------------------------------------------
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -85,4 +92,5 @@ GroceryList::Application.routes.draw do
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id))(.:format)'
+
 end

@@ -1,21 +1,18 @@
-class SettingsController < ApplicationController
+class Settings::AccountsController < Settings::BaseController
 
-  def index
-  end
-
-  def account
+  def edit
     @user = current_user
   end
 
-  def update_account
+  def update
     @user = User.find(current_user.id)
     if @user.update_attributes(params[:user])
       sign_in @user, :bypass => true
       flash[:notice] = 'Your password has been updated.'
-      redirect_to settings_path
+      redirect_to settings_root_path
     else
       flash[:alert] = 'Unsuccessful. Please be sure your passwords match.'
-      render 'account'
+      render 'edit'
     end
   end
 end

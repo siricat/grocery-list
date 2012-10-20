@@ -10,7 +10,7 @@
     %ul
       %li
         Hello
-        = link_to current_user.display_name, settings_path
+        = link_to current_user.display_name, settings_root_path
       %li= link_to 'logout', destroy_user_session_path, method: :delete
   - else
     %ul

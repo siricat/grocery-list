@@ -10,7 +10,6 @@ gem 'haml-rails', '~> 0.3.5'
 gem 'seed-fu', '~> 2.2.0'
 gem 'simple_form', '~> 2.0.3'
 gem 'activeadmin', :git => 'git://github.com/nheinrich/active_admin'
-gem 'mailcatcher'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -34,5 +33,6 @@ group :test, :development do
 end
 
 group :development do
+  gem 'mailcatcher'
   gem 'sextant'
 end

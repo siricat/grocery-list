@@ -1,7 +1,9 @@
 class UserMailer < ActionMailer::Base
-  default from: "something@something.com"
+  default from: "siri@grocerylist.com"
 
-  def welcome_mail(email)
-    mail(:to => email, :subject => "Welcome to Grocery List!").deliver
+  def welcome_email(user)
+    @user = user
+    @url = 'http://groc.dev'
+    mail(:to => user.email, :subject => "Welcome to Grocery List!").deliver
   end
 end

@@ -8,7 +8,7 @@ class UserObserver < ActiveRecord::Observer
   def after_save(user)
     # If it's not a new user we don't want to send them another welcome email
     if @is_new_record then
-      UserMailer.welcome_mail(user.email)
+      UserMailer.welcome_email(user)
     end
   end
 end

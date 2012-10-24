@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Welcome to Grocery List, <%= @user.display_name.titleize %>!</h1>
+    <p>Thank you for joining. Start creating your first <%= link_to "grocery list", @url %>.</p>
+  </body>
+</html>

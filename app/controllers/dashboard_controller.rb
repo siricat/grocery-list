@@ -1,9 +1,9 @@
 class DashboardController < ApplicationController
-  
+
   def index
-    @list = current_account.list
+    @list = current_user.lists.first
     @li = ListItem.new
     @categories = Category.all
   end
-  
+
 end

@@ -20,11 +20,13 @@ class User < ActiveRecord::Base
     :password_confirmation,
     :remember_me
 
-  has_one   :list
-  has_many  :products
+  has_many :list_users, :dependent => :destroy
+  has_many :lists, :through => :list_users, :dependent => :destroy
+
+
 
   def add_list
-    self.build_list
+    lists << List.new({:user_id => id})
   end
 
 end

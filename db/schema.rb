@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121019062849) do
+ActiveRecord::Schema.define(:version => 20121107011039) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -48,9 +48,21 @@ ActiveRecord::Schema.define(:version => 20121019062849) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
-    t.integer  "user_id"
+    t.integer  "list_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "invitations", :force => true do |t|
+    t.string   "email"
+    t.text     "note"
+    t.text     "role"
+    t.integer  "inviter_id"
+    t.integer  "invitee_id"
+    t.integer  "invitation_id"
+    t.integer  "list_id"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
   end
 
   create_table "list_items", :force => true do |t|
@@ -65,7 +77,16 @@ ActiveRecord::Schema.define(:version => 20121019062849) do
     t.integer  "position"
   end
 
+  create_table "list_users", :force => true do |t|
+    t.integer  "list_id"
+    t.integer  "user_id"
+    t.integer  "role_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "lists", :force => true do |t|
+    t.string   "name"
     t.integer  "user_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
@@ -74,14 +95,21 @@ ActiveRecord::Schema.define(:version => 20121019062849) do
   create_table "products", :force => true do |t|
     t.string   "name",        :null => false
     t.integer  "category_id", :null => false
-    t.integer  "user_id",     :null => false
+    t.integer  "list_id",     :null => false
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
 
+  create_table "roles", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.integer  "list_user_id"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
   create_table "users", :force => true do |t|
     t.string   "display_name"
-    t.integer  "account_id"
     t.string   "email",                  :default => "", :null => false
     t.string   "encrypted_password",     :default => "", :null => false
     t.string   "reset_password_token"

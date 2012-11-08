@@ -1,2 +1,5 @@
-= render :partial => "form"
-= render :partial => "lists/list"
+%h1.page Dashboard
+
+- if @list
+  = render :partial => "form"
+  = render :partial => "lists/list"

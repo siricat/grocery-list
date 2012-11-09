@@ -11,10 +11,10 @@ GroceryList::Application.routes.draw do
   }
 
   authenticated :user do
-    root :to => 'dashboard#index'
+    root :to => 'lists#index'
   end
 
-  resources :list do
+  resources :lists do
     resources :list_items do
       put 'position', :on => :member
     end

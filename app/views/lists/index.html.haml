@@ -1,0 +1,21 @@
+%h1.page Dashboard
+
+= link_to "Create a List", new_list_path
+
+%section.lists[@list]
+  %header
+    %h1.section
+      %span.text
+        Grocery Lists
+      %span.meta
+        = "(#{@lists.count})"
+  .content
+    - @lists.each do |list|
+      %header
+        %h1.section
+          %span.text
+            = link_to list.name, list_path(list)
+            .actions
+              = link_to "edit", edit_list_path(list)
+              = link_to "delete", list_path(list), :method => :delete, :confirm => "Are you sure you want to delete #{list.name} list?"
+

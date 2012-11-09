@@ -28,13 +28,13 @@ class ListItemsController < ApplicationController
     @li.user = current_user
     @li.product = @product
 
-    if @li.update_attributes params[:list_item]
+    if @li.update_attributes(params[:list_item])
       flash[:notice] = "#{@product.name} was updated."
+      redirect_to list_path(@list)
     else
       flash[:alert] = "#{@product.name} was not updated."
+      redirect_to :back
     end
-
-    redirect_to root_path
   end
 
   def destroy

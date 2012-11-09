@@ -1,0 +1,7 @@
+= simple_form_for(@list) do |f|
+  %fieldset.name
+    = f.input :name, :label => 'name', :required => true
+  %fieldset.buttons
+    = link_to 'Create List', void_path, :class => 'submit btn'
+  %footer
+    = link_to 'cancel', :back, :class => 'cancel'

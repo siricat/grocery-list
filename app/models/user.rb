@@ -22,11 +22,10 @@ class User < ActiveRecord::Base
 
   has_many :list_users, :dependent => :destroy
   has_many :lists, :through => :list_users, :dependent => :destroy
-
-
+  has_many :owned_lists, :class_name => "List", :dependent => :destroy
 
   def add_list
-    lists << List.new({:user_id => id})
+    lists << self.lists.create
   end
 
 end
